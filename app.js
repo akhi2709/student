@@ -6,10 +6,10 @@ const routes = require("./routes");
 const app = express();
 
 // MongoDB Connection
-const MONGO_URI = "your_mongodb_connection_string_here";
+const MONGO_URI = "mongodb://localhost:27017/yourDatabaseName"; 
+
 mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  
 })
 .then(() => console.log("MongoDB connected successfully"))
 .catch(err => console.log("MongoDB connection error:", err));
@@ -17,4 +17,4 @@ mongoose.connect(MONGO_URI, {
 app.use(bodyParser.json());
 app.use("/api/users", routes);
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(8000, () => console.log("Server running on port 7000"));
